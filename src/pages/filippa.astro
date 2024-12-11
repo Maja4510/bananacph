@@ -1,0 +1,35 @@
+---
+import Link from '../components/Link.astro';
+import Button from '../components/Button.astro';
+import Menu from '../components/Menu.astro';
+import SectionOne from '../components/SectionOne.astro';
+const { variant } = Astro.props;
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+		<link rel="stylesheet" href="/src/styles/global.css">
+	</head>
+
+
+<Menu variant="primary"></Menu>
+<SectionOne></SectionOne>
+
+<Button variant="primary">Hej</Button>
+<Button variant="secondary">Hej</Button>
+
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+	</style>
+
+

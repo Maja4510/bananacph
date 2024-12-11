@@ -1,0 +1,67 @@
+---
+const { 
+  variant = 'default', 
+  href = '#' 
+} = Astro.props;
+---
+
+<a href={href} data-variant={variant}><slot/></a>
+
+<style>
+
+[data-variant="primary"] {
+    color: ;
+    display: inline-flex;
+padding: 18px 26px;
+justify-content: center;
+align-items: center;
+gap: 4px;
+border-radius: 6px;
+border: 1px solid rgba(103, 129, 90, 0.75);
+color: #67815A;
+text-align: center;
+font-family: "Helvetica Neue";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%;
+text-decoration: none;
+}
+
+
+[data-variant="primary"]:hover {
+border: 1px solid rgba(125, 155, 109, 0.60);
+background: #67815A;
+color: #FEF8E2;
+
+     }
+
+
+   [data-variant="secondary"] {
+    display: inline-flex;
+padding: 18px 26px;
+justify-content: center;
+align-items: center;
+gap: 4px;
+border-radius: 6px;
+border: 1px solid #FEF8E2;
+color: #FEF8E2;
+text-align: center;
+font-family: "Helvetica Neue";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 33.6px */
+text-decoration: none;
+
+
+   }
+
+   [data-variant="secondary"]:hover {
+    border-radius: 6px;
+border: 1px solid rgba(125, 155, 109, 0.60);
+background: #FEF8E2;
+color: #67815A;
+     }
+
+</style>
