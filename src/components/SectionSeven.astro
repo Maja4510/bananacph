@@ -1,0 +1,70 @@
+---
+import Button from "./Button.astro";
+const { variant } = Astro.props;
+
+---
+
+    
+<div class="newsletter">
+    <h1>Stay in the loop</h1>
+    <p>Sign up to our newsletter to stay updated on products & events.</p>
+    <Button variant="secondary">E-MAIL</Button>
+    <br>
+    <Button variant="secondary">SIGN UP</Button>
+
+</div>
+</body>
+    
+    <style>
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horisontell centrering */
+  text-align: center; /* Centrerar text */
+  margin: 0 auto; /* Centrera div:en horisontellt i föräldraelementet */
+  background-color: #7D9B6D;
+        width: 100%; /* Fyller hela bredden */
+    margin: 0; /* Tar bort eventuella marginaler */
+    padding: 20px;
+    padding-bottom: 60px;
+
+}
+    
+
+    
+        h1{
+              color: #FEF8E2;
+    text-align: center;
+    font-family: "PP Editorial New";
+    text-transform: uppercase;
+    font-size: 64px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 120%; /* 76.8px */
+        }
+    
+        p{
+            color: #FEF8E2;
+    text-align: center;
+    
+    color: #FEF8E2;
+    text-align: center;
+    
+    /* Bread/T1 */
+    font-family: "Helvetica Neue";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 28.8px */
+    max-width: 40ch;
+        }
+
+    
+
+.newsletter Button {
+  align-self: center; /* Säkerställer att knappen är centrerad */
+}
+    
+    
+    </style>

@@ -1,0 +1,128 @@
+---
+import Button from "./Button.astro";
+
+
+const { variant } = Astro.props;
+
+---
+
+<div class="statistics_grid">
+
+    <div class="center">
+<h1>Our mission</h1>
+<p>Our mission is both simple and vital; to reduce food waste and contribute to a better quality of life. <br><br>We rescue overripe bananas from this wasteful fate and transform them into delicious, plant-based products. 
+<br> <br> These bananas, full of flavor and natural sweetness, become the foundation for spongy cakes, creamy ice cream, delicate truffles, and now even energy bars.  </p>
+
+<Button variant="primary">About us</Button>
+
+</div>
+
+<div class="statistics"> 
+    <h3 class="micro">But why do we specifically use bananas?</h3>
+<h2>40 %</h2>
+<p>Wasted in production due to appearance</p>
+<br>
+<h2>40,000 +</h2>
+<p>Wasted daily in Denmark</p>
+<br>
+<h2>1,5 million</h2>
+<p>Wasted daily in the UK</p>
+<br>
+</div>
+
+</div>
+
+
+<style>
+
+    .statistics_grid {
+        padding-top: 60px;
+    }
+    
+h1 {
+color: #000;
+text-align: center;
+font-family: "PP Editorial New";
+text-transform: uppercase;
+font-size: 50px;
+font-style: italic;
+font-weight: 400;
+line-height: 120%; /* 60px */
+}
+
+h2 {
+margin-left: 23%;
+width: 250px;
+height: 80px;
+font-family: "PP Editorial New";
+font-size: 59.349px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 71.218px */
+}
+
+p {
+text-align: center;
+margin-left: 10%;
+margin-right: 10%;
+font-family: "Helvetica Neue";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 28.8px */}
+
+
+.statistics p {
+margin-left: 23%;
+text-align: left;
+margin-top: -8%;
+width: 250px;
+height: 1rem;
+
+}
+
+.micro {
+text-align: center;
+font-family: "PP Editorial New";
+font-size: 19.2px;
+font-style: italic;
+font-weight: 400;
+line-height: 120%; /* 23.04px */
+margin-bottom: 15%;
+}
+
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horisontell centrering */
+  text-align: center; /* Centrerar text */
+  max-width: 800px; /* Valfri maxbredd för bättre läsbarhet */
+  margin: 0 auto; /* Centrera div:en horisontellt i föräldraelementet */
+  padding: 20px; /* Valfritt: ger lite utfyllnad runt innehållet */
+}
+
+.center Button {
+  align-self: center; /* Säkerställer att knappen är centrerad */
+}
+
+@media (min-width: 600px) {
+    .statistics_grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .micro {
+        margin-left: 23%;
+        margin-top: 7%;
+        text-align: left;
+    }
+
+    .center {
+        align-items: center;
+        margin: 0 auto;
+display: block;
+    }
+}
+    
+</style>
