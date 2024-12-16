@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import SectionFour from '../../components/SectionFour.astro';
 import SectionSeven from '../../components/SectionSeven.astro';
 import SectionFooter from '../../components/SectionFooter.astro';
+import Index from '../index.astro';
 
 export async function getStaticPaths() {
     const data = await fetch("https://imjdmcgmdwbkbdjzddpa.supabase.co/rest/v1/bananabars", {
@@ -28,10 +29,21 @@ console.log(myData);
 ---
 
 <Layout>
+<header>
+    <nav>
+       <a href="javascript:history.back()" class="back-button">
+  ← BACK
+</a>
 
+<a class="logo_singleview" href="/src/pages/index.astro">
+        <img src="/img/bananalogo.svg" alt="Banana Logo Singleview">
+      </a>
+    </nav>
+
+
+</header>
   <article>
-    <br>
-    <br>
+  
     <h1>{myData.navn}</h1>
     
  <div class="product_grid">
@@ -70,14 +82,67 @@ console.log(myData);
 
 
  </Layout>
- <SectionFooter></SectionFooter>
+
  
 <style>
-
 * {
 box-sizing: border-box;
 }
 
+/* Header styling */
+header {
+  display: flex;
+  justify-content: center; /* Centrerer alt indhold horisontalt */
+  align-items: center;    /* Centrerer alt indhold vertikalt */
+  height: 100px;          /* Juster højden på headeren */
+  position: relative;     /* Tillader positionering af logo */
+}
+
+/* Navigation styling */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ margin-left: 48%;
+  box-sizing: border-box;
+}
+
+/* Logo styling */
+.logo_singleview img {
+  max-width: 100px; /* Juster bredden for at gøre logoet mindre */
+  height: auto;     /* Bevarer billedets proportioner */
+  margin: 0 auto;   /* Centrerer logoet, hvis nødvendigt */
+}
+
+/* Tilbage-knap styling */
+.back-button {
+  position: absolute;
+  left: 20px; /* Juster afstand fra venstre */
+  top: 50%;
+  transform: translateY(-50%); /* Centrerer knappen vertikalt */
+  color: black;
+  font-family: "PP Editorial New";
+  font-size: 50px;
+  text-decoration: none;
+}
+
+
+
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
 
     button {
 background: #FEF8E2;

@@ -2,7 +2,7 @@
 import Link from "./Link.astro";
 ---
 
-<div class="hero-container">
+<div class="hero-container" id="hero">
   <div>
     <img src="/img/herobild.webp" alt="herobild" class="hero-image">
   </div>
@@ -11,7 +11,8 @@ import Link from "./Link.astro";
     <div class="hero-text">
       <h3>WE DON’T SELL BARS.</h3>
       <h1>WE FUEL A PEOPLE-POWERED MOVEMENT FOR A GREENER FUTURE.</h1>
-      <Link variant="primary">EXPLORE ENERGY BARS →</Link>
+      <a class="energy_link" href="#energy_bars">EXPLORE ENERGY BARS →</a>
+   
     </div>
   </div>
   
@@ -22,6 +23,23 @@ import Link from "./Link.astro";
       box-sizing: border-box;
     }
   
+
+    .energy_link {
+      color: #FEF8E2;
+font-family: "Helvetica Neue";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 36px */
+text-decoration-line: underline;
+text-decoration-style: solid;
+text-decoration-skip-ink: auto;
+text-decoration-thickness: auto;
+text-underline-offset: auto;
+text-underline-position: from-font;
+padding: 7px;
+}
+    
     .hero-container {
       position: center;
       width: 100%;
