@@ -1,0 +1,114 @@
+<footer>
+
+        
+    <div class="footer_container">
+         <!-- Mobil og desktop pattern -->
+          <div class="pattern_footer">
+          <img class="pattern_mobile" src="img/banana_pattern_mobile.png" alt="pattern">
+    <img class="pattern_desktop" src="img/banana_pattern.png" alt="pattern"> 
+</div>
+    <div>
+        <!-- Footer desktop grid -->
+        <div class="footer_grid">
+            <p>BANANA CPH</p>
+            <p>Birkedommervej 31, 2. th.</p>
+            <p>DK- 2400 Copenhagen</p>
+            <p>info@banancph.com</p>
+        </div>
+    </div>
+         <!-- SoMe ikoner -->
+        <div class="icons">
+            <div></div>
+            <div>
+    <img src="img/facebook_icon.svg" alt="facebook">
+    </div>
+    <div>
+    <img src="img/insta_icon.svg" alt="insta">
+    </div>
+    <div></div>
+    
+    </footer>
+    
+    
+    <style>
+    
+    footer, body{
+    margin: 0;
+    background-color: #FEF8E2;
+        }
+
+        footer {
+  position: relative;
+  overflow: hidden; /* Säkerställer att mönstret inte sticker ut */
+}
+
+
+    
+    p {
+    margin-left: 5%;
+    font-family: "Helvetica Neue";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60%; 
+    }
+
+  
+    
+    .pattern_mobile {
+    max-width: 100%;
+    display: block;
+    }
+    
+    .pattern_desktop {
+      display: none;
+    }
+    
+    .footer_grid {
+    position: absolute; 
+    z-index: 100;
+    margin-top: -52%;
+
+
+    }
+    
+    .icons {
+        margin-top: -16%;
+        display: grid;
+        grid-template-columns: 6fr 1fr 1fr;
+    }
+
+    .pattern_mobile,
+.pattern_desktop {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+    
+    
+    @media (min-width: 600px) {
+        
+    .pattern_desktop {
+    max-width: 100%;
+    display: block;
+    }
+    
+    .pattern_mobile {
+      display: none;
+    }
+    
+    .icons {
+        margin-top: -4%;
+        display: grid;
+        grid-template-columns: 18fr 1fr 1fr 0.2fr;
+    }
+
+    .footer_grid {
+    position: absolute; 
+    z-index: 100;
+    margin-top: -16%;
+    
+    }
+}
+    
+    </style>

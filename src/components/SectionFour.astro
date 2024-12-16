@@ -1,0 +1,73 @@
+---
+import Link from "./Link.astro";
+const { variant } = Astro.props;
+
+---
+<div class="insta_grid">
+
+    <img class="insta_1" src="img/insta_bananas.webp" alt="banana">
+    <img class="insta_2" src="img/insta_bananabread.webp" alt="bananabread">
+    <img class="insta_3" src="/img/insta_bananaicecream.webp" alt="ice cream">
+    <img class="insta_4" src="/img/insta_bananatruffles.webp" alt="truffles">
+    </div>
+    <div class="parent-container">
+
+        <Link variant="secondary">SEE MORE AT INSTAGRAM → </Link>
+    </div>
+    
+    <style>
+
+.parent-container {
+  display: flex;
+  justify-content: flex-end;
+}
+    
+    img{
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    Link {
+  display: block;
+  text-align: right;
+  padding-right: 20px;
+}
+    
+    .insta_2,
+    .insta_3,
+    .insta_4 {
+        display: none;
+    }
+    
+    
+    
+    @media (min-width: 600px) {
+    
+    .insta_2,
+    .insta_3,
+    .insta_4 {
+        display: block;
+    }
+    
+    .insta_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 0.7%;
+    }
+
+    Link {
+  display: block;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+  
+}
+    }
+    
+    
+    </style>
