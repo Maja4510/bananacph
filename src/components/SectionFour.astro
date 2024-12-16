@@ -5,14 +5,16 @@ const { variant } = Astro.props;
 ---
 <div class="insta_grid">
 
-    <img class="insta_1" src="img/insta_bananas.webp" alt="banana">
-    <img class="insta_2" src="img/insta_bananabread.webp" alt="bananabread">
+    <img class="insta_1" src="/img/insta_bananas.webp" alt="banana">
+    <img class="insta_2" src="/img/insta_bananabread.webp" alt="bananabread">
     <img class="insta_3" src="/img/insta_bananaicecream.webp" alt="ice cream">
     <img class="insta_4" src="/img/insta_bananatruffles.webp" alt="truffles">
     </div>
+
     <div class="parent-container">
 
         <Link variant="secondary">SEE MORE AT INSTAGRAM → </Link>
+   
     </div>
     
     <style>
@@ -24,21 +26,27 @@ const { variant } = Astro.props;
     
     img{
         max-width: 100%;
-        padding: 20px;
+        padding: 10px;
     }
 
     Link {
   display: block;
   text-align: right;
-  padding-right: 20px;
+  padding-right: 80px;
+  margin-right: 40px;
+  padding-bottom: 30px;
 }
-    
+    .insta_1 {
+      display: block;
+      margin: 0 auto;
+    }
     .insta_2,
     .insta_3,
     .insta_4 {
         display: none;
     }
     
+
     
     
     @media (min-width: 600px) {

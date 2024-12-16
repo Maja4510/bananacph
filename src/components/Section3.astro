@@ -1,8 +1,12 @@
+---
+import Button from "./Button.astro";
+---
+<section id="Section3">
 <div class="container_section3">
   <div class="text-section">
     <h1 class="h1_section3">Just real humans connecting, sweating, and growing together.</h1>
     <p class="join_p">Join our sustainable banana runs in central Copenhagen.</p>
-    <button>SIGN UP</button>
+    <Button variant="secondary">SIGN UP</Button>
     <div class="details">
       <p><>Distance <strong></strong> 4-8 km</p>
       <p><>Location <strong></strong> Søerne</p>
@@ -14,6 +18,7 @@
   <img class="event_img" src="/public/imgs/event_img.webp" alt="event">
   </div>
 </div>
+</section>
 
 
 <style>
@@ -36,12 +41,13 @@ max-width: 100%;
   background-color: #7D9B6D;
    flex-direction: column;
   justify-content: center; 
+  text-align: center;
 }
 
 
 .h1_section3 {
 color: #FEF8E2;
- font-size: 48px;
+ font-size: 46px;
  text-align: center;
  font-family: PP Editorial New;
  font-weight: 400;
@@ -54,7 +60,7 @@ color: #FEF8E2;
   margin: 0.5rem 0;
 color: #FEF8E2;
 text-align: center;
- font-size: 24px;
+ font-size: 20px;
  font-family: Helvetica Neue;
  font-weight: 400;
  line-height: 28.80px;
@@ -66,7 +72,7 @@ text-align: center;
 .details {
   margin-top: 2rem;
 color: #FEF8E2;
- font-size: 30px;
+ font-size: 24px;
  font-family: Helvetica Neue;
  font-weight: 400;
  line-height: 43.20px;
@@ -86,7 +92,7 @@ padding-left: 10%;
 
 .note {
 color: #FEF8E2;
- font-size: 12px;
+ font-size: 16px;
  text-align: left;
  font-family: PP Editorial New;
  font-style: italic;

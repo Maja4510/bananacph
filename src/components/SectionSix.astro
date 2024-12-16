@@ -1,19 +1,22 @@
 ---
+
+
 import Button from "./Button.astro";
 
+const { variant,  } = Astro.props;
 
-const { variant } = Astro.props;
 
 ---
-
+<section id="SectionSix">
 <div class="statistics_grid">
 
     <div class="center">
 <h1>Our mission</h1>
 <p>Our mission is both simple and vital; to reduce food waste and contribute to a better quality of life. <br><br>We rescue overripe bananas from this wasteful fate and transform them into delicious, plant-based products. 
 <br> <br> These bananas, full of flavor and natural sweetness, become the foundation for spongy cakes, creamy ice cream, delicate truffles, and now even energy bars.  </p>
-
-<Button variant="primary">About us</Button>
+<br>
+<br>
+<Button variant="primary">ABOUT US</Button>
 
 </div>
 
@@ -31,12 +34,13 @@ const { variant } = Astro.props;
 </div>
 
 </div>
-
+</section>
 
 <style>
 
     .statistics_grid {
         padding-top: 60px;
+        padding-bottom: 80px;
     }
     
 h1 {
@@ -66,7 +70,7 @@ text-align: center;
 margin-left: 10%;
 margin-right: 10%;
 font-family: "Helvetica Neue";
-font-size: 24px;
+font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: 120%; /* 28.8px */}
@@ -87,8 +91,7 @@ font-family: "PP Editorial New";
 font-size: 19.2px;
 font-style: italic;
 font-weight: 400;
-line-height: 120%; /* 23.04px */
-margin-bottom: 15%;
+margin-bottom: 10%;
 }
 
 
@@ -104,6 +107,7 @@ margin-bottom: 15%;
 
 .center Button {
   align-self: center; /* Säkerställer att knappen är centrerad */
+  
 }
 
 @media (min-width: 600px) {

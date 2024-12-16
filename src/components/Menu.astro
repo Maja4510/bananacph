@@ -1,55 +1,76 @@
 ---
 import Link from "./Link.astro";
 const { variant } = Astro.props;
+import SectionSix from "./SectionSix.astro";
+import Section2 from "./Section2.astro";
+import Section3 from "./Section3.astro";
 
+const navLinks =
+[
+  {
+      linkText: 'MISSION',
+      href: '#SectionSix',
+  },
+  {
+      linkText: 'ENERGY BARS',
+      href: '#Section2',
+  },
+   {
+      linkText: 'JOIN THE COMMUNITY',
+      href: '#Section3',
+  },
+]
+
+const links = navLinks.map((link) => ({
+    linkText: link.linkText,
+    href: link.href
+}))
+
+console.log(links)
 ---
 
 <body>
     
+<div class="hamburger">
+   <span></span>
+   <span></span>
+   <span></span>
+</div> 
 
-
-<nav>
-  <div class="menu">
-    <!-- Hamburgermeny för mobil -->
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- Länkar och logotyp -->
-    <div class="menu-links hidelinks">
-      <div class="left-links">
-        <Link variant={variant}>MISSION</Link>
-        <Link variant={variant}>ENERGY BARS</Link>
-      </div>
-      
-      <a href="/src/pages/filippa.astro">
-        <img src="/img/bananalogo.svg" alt="logo" class="logo">
-    </a>
-      <div class="right-link">
-        <Link variant={variant}>JOIN THE COMMUNITY</Link>
-      </div>
-    </div>
-  </div>
+<nav class="menu">
+   {
+      navLinks.map((navLink) => (
+        <a href={navLink.href}>{navLink.linkText}</a>
+      ))
+   }
 </nav>
+
+
+
 
 <style>
 
-    body {
-        margin: 0;
-        padding: 0;
-    }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+  }
+  
+
   /* Baslayout */
   .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
-    
     z-index: 1000;
-    position: fixed;
     width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
     
   }
 
@@ -69,8 +90,8 @@ const { variant } = Astro.props;
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 40px;
-    height: 35px;
+    width: 70px;
+    height: 60px;
     cursor: pointer;
     padding: 15px;
   }
@@ -84,7 +105,7 @@ const { variant } = Astro.props;
 
   @media (max-width: 768px) {
     .hamburger {
-      display: flex;
+      display: block;
       z-index: 10000;
     }
 
@@ -95,7 +116,7 @@ const { variant } = Astro.props;
       width: 100%;
       position: absolute;
       top: 0px;
-      left: 0;
+      right: 0;
       padding: 30px;
     }
 

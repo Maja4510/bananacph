@@ -1,22 +1,30 @@
-<!doctype html>
-<html lang="en">
+---
+import "../styles/global.css";
+import Menu from "../components/Menu.astro";
+import SectionFooter from "../components/SectionFooter.astro";
+---
+
+
+<html lang="da">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Astro</title>
+	
 	</head>
 	<body>
-		<slot />
-	</body>
-</html>
+		
+<header>
+	  <Menu variant="primary"></Menu>
+	  </header>
+<main>
+	<slot></slot>
+</main>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<footer>
+	<SectionFooter></SectionFooter>
+</footer>
+	</body>
+	</html>

@@ -8,14 +8,36 @@ const { variant } = Astro.props;
 <div class="newsletter">
     <h1>Stay in the loop</h1>
     <p>Sign up to our newsletter to stay updated on products & events.</p>
-    <Button variant="secondary">E-MAIL</Button>
-    <br>
+<div class="input-container">           <input type="text" id="name" class="input-field" placeholder="E-MAIL">     </div>    <br>
     <Button variant="secondary">SIGN UP</Button>
 
 </div>
 </body>
     
     <style>
+
+        .input-field {
+
+            color: ;
+    display: inline-flex;
+      padding: 18px 40px;
+justify-content: center;
+align-items: center;
+gap: 4px;
+border-radius: 6px;
+border: 1px solid #FEF8E2;
+background-color: #7D9B6D;
+color: #FEF8E2;
+text-align: center;
+font-family: "Helvetica Neue";
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%;
+text-decoration: none;
+margin-bottom: 30px;
+}
+        
 
 .newsletter {
   display: flex;
@@ -27,21 +49,22 @@ const { variant } = Astro.props;
         width: 100%; /* Fyller hela bredden */
     margin: 0; /* Tar bort eventuella marginaler */
     padding: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 10%;
 
 }
     
 
     
         h1{
+            padding-top: 3%;
               color: #FEF8E2;
     text-align: center;
     font-family: "PP Editorial New";
     text-transform: uppercase;
-    font-size: 64px;
+    font-size: 54px;
     font-style: italic;
     font-weight: 400;
-    line-height: 120%; /* 76.8px */
+    margin-bottom: -2%;
         }
     
         p{
@@ -51,13 +74,12 @@ const { variant } = Astro.props;
     color: #FEF8E2;
     text-align: center;
     
-    /* Bread/T1 */
     font-family: "Helvetica Neue";
-    font-size: 24px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%; /* 28.8px */
     max-width: 40ch;
+    padding-bottom: 2%;
         }
 
     
@@ -66,5 +88,13 @@ const { variant } = Astro.props;
   align-self: center; /* Säkerställer att knappen är centrerad */
 }
     
-    
+
+    @media (min-width: 600px) {
+    .input-field{
+        padding: 18px 250px;
+    }
+
+}
+
+
     </style>

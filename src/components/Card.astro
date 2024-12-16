@@ -1,32 +1,39 @@
+---
+const {data}= Astro.props;
+export async function getStaticPaths() {
+    const data = await fetch("https://imjdmcgmdwbkbdjzddpa.supabase.co/rest/v1/bananabars", {
+	method: "GET",
+	headers: { 
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltamRtY2dtZHdia2JkanpkZHBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDAxMzUsImV4cCI6MjA0OTMxNjEzNX0.YAgM6xcBNBhefXYuuhckSCtcjZkrTGcmzE8y4itwCgE"
+	},
+}).then(response => response.json());
+
+    return data.map((navn) => {
+        return {
+            params: { slug: navn.slug },
+            props: { myData:navn },
+        };
+    });
+}
+const { myData } = Astro.props
+console.log(myData);
+---
 
 
+<a href={`bars/${data.slug}`} class="card">
+<article>
+<img src= {"/imgs/"+data.img} alt="bar">
+    <p class="micro">{data.ingrediens}</p>
+    <p class="link">{data.navn}</p>
+    </a>
+        
 
-<section id="Section2">
-<h1 class="h1_section2">NO PHOTOSHOP.  JUST RAW INGREDIENTS.</h1>
-<p class="explore_p">Explore our energy bars.</p>
-<section></section>
+      <!-- <p>{text}</p>
+    <link>{link}</link> -->
+  
+  
 
-<!-- <div class="grid_section2">
-    <div class="boost_bottom">
-     <img class="boost_img" src="/public/imgs/boost.webp" alt="boost bar">
-      <p class="boost_p">1 saved banana, 3 cashewnuts, 1tbs cacao</p>
-     <a href="/products/banana-boost">
-        <button>BANANA BOOST</button>
-      </a>
-</div>
-<div class="produkt_bottom">
-     <img class="focus_img" src="/public/imgs/focus.webp" alt="focus bar">
-      <p class="focus_p">1 saved banana, 6 walnuts, 10 dried cranberries</p>
-      <button>BANANA FOCUS</button>
-</div>
-<div class="recharge_bottom">
-  <img class="recharge_img" src="/public/imgs/recharge.webp" alt="recharge bar">
-      <p class="recharge_p">1 saved banana, whey protein, vanilla extract </p>
-      <button>BANANA RECHARGE</button>
-</div>
-</div>
-</section> -->
-
+</article>
 
 <style>
 
@@ -38,18 +45,12 @@ body {
 background-color: #FEF8E2;
 }
 
+.card {
 
-.h1_section2 {
-color: #000;
-text-align: center;
-font-family: "PP Editorial New";
-font-size: 50px;
-font-style: italic;
-font-weight: 400;
-line-height: 120%; /* 76.8px */
-padding-left: 5%;
-padding-right: 5%;
 }
+
+
+
 
 .boost_p, .focus_p, .recharge_p {
 color: #000;
@@ -61,18 +62,6 @@ font-weight: 400;
 line-height: 120%; /* 23.04px */
 }
 
-.explore_p { 
-text-align: center; /* Centrer tekst horisontalt */
-margin: 20px auto; / Gør teksten centreret med auto-margin /
-  width: fit-content; /* Sørg for, at teksten ikke strækker sig over hele bredden */
-  font-family: "Helvetica Neue";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%;
-  color: #000;
- padding-bottom: 2%;
-}
 
 button {
     color: #000;

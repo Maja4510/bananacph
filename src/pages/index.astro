@@ -1,44 +1,56 @@
 ---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 import Link from '../components/Link.astro';
+import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
 import Menu from '../components/Menu.astro';
 import SectionOne from '../components/SectionOne.astro';
+import Section2 from '../components/Section2.astro';
+import Section3 from '../components/Section3.astro';
 import SectionFour from '../components/SectionFour.astro';
 import SectionFive from '../components/SectionFive.astro';
 import SectionSix from '../components/SectionSix.astro';
 import SectionSeven from '../components/SectionSeven.astro';
 import SectionFooter from '../components/SectionFooter.astro';
+import SectionEight from "../components/SectionEight.astro";
 
 
+const data = await fetch("https://imjdmcgmdwbkbdjzddpa.supabase.co/rest/v1/bananabars", {
+	method: "GET",
+	headers: { 
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltamRtY2dtZHdia2JkanpkZHBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDAxMzUsImV4cCI6MjA0OTMxNjEzNX0.YAgM6xcBNBhefXYuuhckSCtcjZkrTGcmzE8y4itwCgE"
+	},
+}
+).then(res=>res.json());
 
-
-
-
-const { variant } = Astro.props;
-
-
+console.log(data);
+ 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-		<link rel="stylesheet" href="/src/styles/global.css">
-	</head>
-
-
-    <Menu variant="primary"></Menu>
+<Layout>
     <SectionOne></SectionOne>
+	<section id="Section2">
+	<Section2></Section2>
+	</section>
+
+	<section class="bars">
+		{
+		data.map((navn) => {
+			return <Card data={navn}/>;
+		})
+		}
+
+</section>
+
+
+
+	
+<Section3></Section3>
 <SectionFour></SectionFour>
 <SectionFive></SectionFive>
 <SectionSix></SectionSix>
 <SectionSeven></SectionSeven>
-<SectionFooter></SectionFooter>
 
-
-
-
+</Layout>
 

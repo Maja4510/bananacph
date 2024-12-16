@@ -1,0 +1,215 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionFour from '../../components/SectionFour.astro';
+import SectionSeven from '../../components/SectionSeven.astro';
+import SectionFooter from '../../components/SectionFooter.astro';
+
+export async function getStaticPaths() {
+    const data = await fetch("https://imjdmcgmdwbkbdjzddpa.supabase.co/rest/v1/bananabars", {
+	method: "GET",
+	headers: { 
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltamRtY2dtZHdia2JkanpkZHBhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3NDAxMzUsImV4cCI6MjA0OTMxNjEzNX0.YAgM6xcBNBhefXYuuhckSCtcjZkrTGcmzE8y4itwCgE"
+	},
+}).then(response => response.json());
+
+    return data.map((navn) => {
+        return {
+            params: { slug: navn.slug },
+            props: { myData:navn },
+        };
+    });
+}
+const { myData } = Astro.props
+console.log(myData);
+
+
+
+
+---
+
+<Layout>
+
+  <article>
+    <br>
+    <br>
+    <h1>{myData.navn}</h1>
+    
+ <div class="product_grid">
+
+      <div>
+    <img class="img_singleview" src= {"/imgs/"+myData.img} alt="bar">
+    </div>
+  
+      <div class="text_singleview">
+            <p>{myData.info}</p>
+            
+            <ul class="liste">
+                <li> Plant based</li>
+                <li> Lactose free</li>
+                <li> Gluten free</li>
+                <li> Guilt free</li>
+
+ <button>COMING SOON</button>
+         </div>
+         </div>
+        
+   
+
+<div class="ingrediensimg ">
+ <img src= {"/imgs/"+myData.ingrediens_img} alt="bar">
+</div>
+
+       
+   </article>
+
+<SectionFour></SectionFour>
+<SectionSeven></SectionSeven>
+
+
+
+
+
+ </Layout>
+ <SectionFooter></SectionFooter>
+ 
+<style>
+
+* {
+box-sizing: border-box;
+}
+
+
+    button {
+background: #FEF8E2;
+    display: inline-flex;
+padding: 18px 26px;
+justify-content: center;
+align-items: center;
+gap: 4px;
+border-radius: 6px;
+border: 1px solid rgba(103, 129, 90, 0.75);
+color: #67815A;
+text-align: center;
+font-family: "Helvetica Neue";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+text-decoration: none;
+width: fit-content;
+}
+
+
+button:hover {
+border: 1px solid rgba(125, 155, 109, 0.60);
+background-color: #67815A;
+color: #FEF8E2;
+
+     }
+
+
+
+.text_singleview {
+max-width: 60ch;
+}
+
+
+.product_grid {
+margin: 2%;
+}
+
+.img_singleview {
+margin-bottom: 10%;
+}
+
+
+.ingrediensimg {
+width: 100%;
+margin: 0;
+margin-right: 20%;
+}
+
+
+body {
+  background-color: #FEF8E2;
+}
+ 
+h1
+{
+color: #000;
+text-align: center;
+font-family: "PP Editorial New";
+font-size: 40px;
+font-style: italic;
+font-weight: 300;
+line-height: 60px; /* 60px */
+margin-top: 8%;
+}
+ 
+.liste {
+padding-top: 10%;
+margin left: 2%;
+ 
+ 
+}
+button {
+    padding-bottom: 1%;
+    margin-top: 10%;
+}
+ 
+p,
+.liste
+{
+color: #000;
+font-family: "Helvetica Neue";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+ 
+}
+ 
+ 
+.bar {
+width: 791px;
+height: 787px;
+flex-shrink: 0;
+border: 0px solid #FFF;
+}
+ 
+  .liste li::before {
+    content: "✓ ";
+    font-weight: bold;
+  }
+ 
+  li {
+    list-style-type: none;
+    }
+ 
+/* CSS RESET */
+ 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    
+    }
+ 
+    /* ALT EFTER DETTE ER WEBSITE */
+ 
+@media (min-width: 600px) {
+.product_grid {
+display: grid;
+grid-template-columns: 1fr 1fr ;
+gap: 5%;
+padding: 5% }
+ 
+}
+
+ 
+
+</style>
