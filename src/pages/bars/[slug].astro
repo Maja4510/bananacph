@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import SectionFour from '../../components/SectionFour.astro';
 import SectionSeven from '../../components/SectionSeven.astro';
-import SectionFooter from '../../components/SectionFooter.astro';
 import Menusingleview from '../../components/Menusingleview.astro';
 
 export async function getStaticPaths() {
@@ -22,9 +21,6 @@ export async function getStaticPaths() {
 }
 const { myData } = Astro.props
 console.log(myData);
-
-
-
 
 ---
 
@@ -55,21 +51,15 @@ console.log(myData);
          </div>
          </div>
         
-   
-
+  
 <div class="ingrediensimg ">
  <img src= {"/imgs/"+myData.ingrediens_img} alt="bar">
 </div>
 
-       
    </article>
 
 <SectionFour></SectionFour>
 <SectionSeven></SectionSeven>
-
-
-
-
 
  </Layout>
 
@@ -82,10 +72,10 @@ box-sizing: border-box;
 /* Header styling */
 header {
   display: flex;
-  justify-content: center; /* Centrerer alt indhold horisontalt */
-  align-items: center;    /* Centrerer alt indhold vertikalt */
-  height: 100px;          /* Juster højden på headeren */
-  position: relative;     /* Tillader positionering af logo */
+  justify-content: center; 
+  align-items: center;    
+  height: 100px;         
+  position: relative;     
 }
 
 /* Navigation styling */
@@ -116,10 +106,6 @@ header nav {
   font-size: 50px;
   text-decoration: none;
 }
-
-
-
-
 
     button {
 background: #FEF8E2;
@@ -157,6 +143,7 @@ max-width: 60ch;
 
 .product_grid {
 margin: 2%;
+padding: 5%;
 }
 
 .img_singleview {
@@ -183,7 +170,6 @@ font-family: "PP Editorial New";
 font-size: 40px;
 font-style: italic;
 font-weight: 300;
-line-height: 60px; /* 60px */
 margin-top: 8%;
 }
  
@@ -196,6 +182,7 @@ margin left: 2%;
 button {
    
     margin-top: 10%;
+   margin-bottom: 10%;
 }
  
 p,
@@ -248,10 +235,9 @@ border: 0px solid #FFF;
 display: grid;
 grid-template-columns: 1fr 1fr ;
 gap: 5%;
-padding: 5% }
+padding: 5% 
+}
  
 }
-
- 
 
 </style>

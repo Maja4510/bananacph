@@ -7,7 +7,11 @@
       <span></span>
     </div>
 
-    <!-- Links and Logo -->
+
+        <!-- Links and Logo -->
+ <a class="logo_burger" href="/#">
+      <img src="/img/bananalogo.svg" alt="Banana Logo">
+    </a>
 
 
     <div class="menu-links hidelinks">
@@ -55,10 +59,13 @@
   font-weight: 400;
   padding-right: 2%;
   padding-left: 2%;
+  z-index: 1000;
   
 }
 
-
+.logo_burger {
+display: none;
+}
 
 .menu-links a {
   color: #FEF8E2;
@@ -108,15 +115,26 @@ color: #AFD79A;
       display: flex;
     }
 
-    .logo {
-      display: none;
+
+.logo {
+display: none;
+}
+
+    .logo_burger {
+  display: block; /* Sørg for, at logoet vises */
+  position: absolute; /* Positioner logoet uafhængigt */
+  left: 50%; /* Centrér logoet */
+  transform: translateX(-50%); /* Finjustér centreringen */
+  top: 10px; /* Justér afstand fra toppen */
+  z-index: 999; /* Sørg for, at logoet er øverst */
+}
     }
 
     .left-links a,
     .right-link a {
       margin-bottom: 10px;
     }
-  }
+  
 </style>
 
 <script>
