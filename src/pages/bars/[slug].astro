@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import SectionFour from '../../components/SectionFour.astro';
 import SectionSeven from '../../components/SectionSeven.astro';
 import SectionFooter from '../../components/SectionFooter.astro';
-import Index from '../index.astro';
+import Menusingleview from '../../components/Menusingleview.astro';
 
 export async function getStaticPaths() {
     const data = await fetch("https://imjdmcgmdwbkbdjzddpa.supabase.co/rest/v1/bananabars", {
@@ -29,19 +29,9 @@ console.log(myData);
 ---
 
 <Layout>
-<header>
-    <nav>
-       <a href="javascript:history.back()" class="back-button">
-  ← BACK
-</a>
-
-<a class="logo_singleview" href="/src/pages/index.astro">
-        <img src="/img/bananalogo.svg" alt="Banana Logo Singleview">
-      </a>
-    </nav>
+<header><Menusingleview></header>
 
 
-</header>
   <article>
   
     <h1>{myData.navn}</h1>
@@ -130,19 +120,6 @@ header nav {
 
 
 
-.back-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
 
     button {
 background: #FEF8E2;
@@ -217,7 +194,7 @@ margin left: 2%;
  
 }
 button {
-    padding-bottom: 1%;
+   
     margin-top: 10%;
 }
  

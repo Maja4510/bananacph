@@ -26,12 +26,22 @@
   
   .background_image {
     display: block;
-    width: 1500px;
+   width: 1400px;
+   height: 900px;
   }
-  
-  .pattern {
+ .pattern {
     position: absolute; 
-    bottom: 0; 
-  }
+    top: 50%; /* Centrerer grafikken vertikalt */
+    left: -25%; /* Placerer grafikken i højre side */
+    transform: translateY(-50%) rotate(90deg); /* Roterer 90 grader og justerer centrering */
+    z-index: 10; /* Sørger for, at grafikken ligger ovenpå GIF'en */
+    height: auto; /* Bevarer den originale højde */
+    width: 65%; /* Tilpasser bredden */
+}
+
+
+
+
+
   
   </style>
