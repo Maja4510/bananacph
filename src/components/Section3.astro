@@ -9,13 +9,13 @@ import Button from "./Button.astro";
     <Button variant="secondary">SIGN UP</Button>
     <div class="details">
       <p><>Distance <strong></strong> 4-8 km</p>
-      <p><>Location <strong></strong> Søerne</p>
+      <p><>Location <strong></strong> Østre anlæg</p>
       <p>Levels <strong></strong>  All levels</p>
     </div>
     <p class="note">Our social runs bring together sustainability and collective <br> action - uniting to make the world a better place.</p>
   </div>
   <div class="image-section">
-  <img class="event_img" src="/imgs/event_img.webp" alt="event">
+  <img class="event_img" src="/imgs/event_img.webp" alt="event" loading="lazy">
   </div>
 </div>
 </section>
@@ -32,6 +32,8 @@ max-width: 100%;
   justify-content: space-between;
   align-items: stretch; /* begge sektioner har samme højde */
   height: auto; /* tilpasser til indholdets højde */
+ margin-bottom: 8%;
+  background-color: #7D9B6D;
   
 }
 
