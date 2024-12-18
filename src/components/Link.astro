@@ -3,21 +3,18 @@ const {
   variant = 'default', 
   href = '#' 
 } = Astro.props;
-
-
 ---
 
 <a href={href} data-variant={variant}><slot/></a>
 
 <style>
-
 [data-variant="primary"] {
     color: #FEF8E2;
 font-family: "Helvetica Neue";
 font-size: 24px;
 font-style: normal;
 font-weight: 400;
-line-height: 120%; /* 36px */
+line-height: 120%;
 text-decoration-line: underline;
 text-decoration-style: solid;
 text-decoration-skip-ink: auto;
@@ -26,20 +23,16 @@ text-underline-offset: auto;
 text-underline-position: from-font;
 padding: 7px;
 }
-
-
 [data-variant="primary"]:hover {
-      color: #AFD79A;
-     }
-
-
-   [data-variant="secondary"] {
-    color: #000000;
+color: #AFD79A;
+}
+[data-variant="secondary"] {
+color: #000000;
 font-family: "Helvetica Neue";
 font-size: 24px;
 font-style: normal;
 font-weight: 400;
-line-height: 120%; /* 36px */
+line-height: 120%;
 text-decoration-line: underline;
 text-decoration-style: solid;
 text-decoration-skip-ink: auto;
@@ -47,12 +40,8 @@ text-decoration-thickness: auto;
 text-underline-offset: auto;
 text-underline-position: from-font;
 padding: 7px;
-
-
-   }
-
-   [data-variant="secondary"]:hover {
-      color: #7D9B6D;
-     }
-
+}
+[data-variant="secondary"]:hover {
+color: #7D9B6D;
+}
 </style>

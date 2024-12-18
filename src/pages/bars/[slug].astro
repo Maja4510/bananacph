@@ -29,27 +29,24 @@ console.log(myData);
 
 
   <article>
+<h1>{myData.navn}</h1>
+<div class="product_grid">
+<div>
+<img class="img_singleview" src= {"/imgs/"+myData.img} alt="bar">
+</div>
   
-    <h1>{myData.navn}</h1>
-    
- <div class="product_grid">
-
-      <div>
-    <img class="img_singleview" src= {"/imgs/"+myData.img} alt="bar">
-    </div>
-  
-      <div class="text_singleview">
+<div class="text_singleview">
             <p>{myData.info}</p>
             
-            <ul class="liste">
-                <li> Plant based</li>
-                <li> Lactose free</li>
-                <li> Gluten free</li>
-                <li> Guilt free</li></ul>
+<ul class="liste">
+<li> Plant based</li>
+<li> Lactose free</li>
+<li> Gluten free</li>
+<li> Guilt free</li></ul>
 
  <button>COMING SOON</button>
-         </div>
-         </div>
+</div>
+</div>
         
   
 <div class="ingrediensimg ">
@@ -90,24 +87,12 @@ header nav {
 
 /* Logo styling */
 .logo_singleview img {
-  max-width: 100px; /* Juster bredden for at gøre logoet mindre */
-  height: auto;     /* Bevarer billedets proportioner */
-  margin: 0 auto;   /* Centrerer logoet, hvis nødvendigt */
+  max-width: 100px; 
+  height: auto;    
+  margin: 0 auto; 
 }
 
-/* Tilbage-knap styling */
-.back-button {
-  position: absolute;
-  left: 20px; /* Juster afstand fra venstre */
-  top: 50%;
-  transform: translateY(-50%); /* Centrerer knappen vertikalt */
-  color: black;
-  font-family: "PP Editorial New";
-  font-size: 50px;
-  text-decoration: none;
-}
-
-    button {
+button {
 background: #FEF8E2;
     display: inline-flex;
 padding: 18px 26px;
@@ -126,20 +111,16 @@ text-decoration: none;
 width: fit-content;
 }
 
-
 button:hover {
 border: 1px solid rgba(125, 155, 109, 0.60);
 background-color: #67815A;
 color: #FEF8E2;
-
-     }
-
+}
 
 
 .text_singleview {
 max-width: 60ch;
 }
-
 
 .product_grid {
 margin: 2%;
@@ -149,7 +130,6 @@ padding: 5%;
 .img_singleview {
 margin-bottom: 10%;
 }
-
 
 .ingrediensimg {
 width: 100%;
@@ -180,9 +160,8 @@ margin left: 2%;
  
 }
 button {
-   
-    margin-top: 10%;
-   margin-bottom: 10%;
+margin-top: 10%;
+margin-bottom: 10%;
 }
  
 p,
@@ -205,31 +184,29 @@ flex-shrink: 0;
 border: 0px solid #FFF;
 }
  
-  .liste li::before {
-    content: "✓ ";
-    font-weight: bold;
+.liste li::before {
+content: "✓ ";
+font-weight: bold;
   }
  
-  li {
-    list-style-type: none;
-    }
+li {
+list-style-type: none;
+}
  
 /* CSS RESET */
  
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+padding: 0;
+margin: 0;
+box-sizing: border-box;
 }
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-    
-    }
- 
-    /* ALT EFTER DETTE ER WEBSITE */
- 
+img {
+width: 100%;
+height: auto;
+display: block;
+}
+
+/* WEBSITE */
 @media (min-width: 600px) {
 .product_grid {
 display: grid;
